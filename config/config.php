@@ -5,7 +5,7 @@
  * 客户端使用CSS,IMG等使用WEB_ROOT
  * by lancelot
  */
-	define("WEB_ROOT",'http://localhost:801/library/');	//网站根目录
+	define("WEB_ROOT",'http://localhost:80/library/');	//网站根目录
 	define("APP_PATH",substr(__FILE__, 0,-17));				//磁盘目录
 	define("CSS_PATH",WEB_ROOT."static/css/");				//CSS目录
 	define("IMG_PATH",WEB_ROOT."static/img/");				//img目录
