@@ -1,30 +1,30 @@
 <?php
 /**
- * ÅäÖÃÍøÕ¾¸÷ÖÖÄ¿Â¼
- * ·þÎñÆ÷ÒýÓÃPHPÎÄ¼þÊ±Ê¹ÓÃAPP_PATH
- * ¿Í»§¶ËÊ¹ÓÃCSS,IMGµÈÊ¹ÓÃWEB_ROOT
+ * é…ç½®ç½‘ç«™å„ç§ç›®å½•
+ * æœåŠ¡å™¨å¼•ç”¨PHPæ–‡ä»¶æ—¶ä½¿ç”¨APP_PATH
+ * å®¢æˆ·ç«¯ä½¿ç”¨CSS,IMGç­‰ä½¿ç”¨WEB_ROOT
  * by lancelot
  */
-	define("WEB_ROOT",'http://localhost:801/library/');	//ÍøÕ¾¸ùÄ¿Â¼
-	define("APP_PATH",substr(__FILE__, 0,-17));				//´ÅÅÌÄ¿Â¼
-	define("CSS_PATH",WEB_ROOT."static/css/");				//CSSÄ¿Â¼
-	define("IMG_PATH",WEB_ROOT."static/img/");				//imgÄ¿Â¼
-	define("CLASS_PATH",APP_PATH."static/class/");			//¹¦ÄÜÀàÄ¿Â¼
-	define("SMARTY_PATH",APP_PATH."Smarty/");				//smartyÄ¿Â¼
+	define("WEB_ROOT",'http://localhost:801/library/');	//ç½‘ç«™æ ¹ç›®å½•
+	define("APP_PATH",substr(__FILE__, 0,-17));				//ç£ç›˜ç›®å½•
+	define("CSS_PATH",WEB_ROOT."static/css/");				//CSSç›®å½•
+	define("IMG_PATH",WEB_ROOT."static/img/");				//imgç›®å½•
+	define("CLASS_PATH",APP_PATH."static/class/");			//åŠŸèƒ½ç±»ç›®å½•
+	define("SMARTY_PATH",APP_PATH."Smarty/");				//smartyç›®å½•
 	
-	/*smartyÄ¿Â¼ÐÅÏ¢*/
-	//------------ÅäÖÃ·þÎñÆ÷ÐÅÏ¢
-		$dbhost 	= "localhost";	//ÅäÖÃÖ÷»ú
-		$dbuser 	= "book_01";		//ÅäÖÃÓÃ»§Ãû
-		$dbpassword = "book_01";		//ÅäÖÃÃÜÂë
-		$dbname 	= "lib";		//Ê¹ÓÃÊý¾Ý¿â
-		$dbcoding 	= "utf8";		//ÉèÖÃ×Ö·û¼¯
-	//------------ÅäÖÃsmartyÄ¿Â¼ÐÅÏ¢----------
-		$smarty_config_dir 		= SMARTY_PATH.'Config_File.class.php';	//Ä¿Â¼ÎÄ¼þ
-		$smarty_caching 		= false;								//ÊÇ·ñÆôÓÃ»º´æ
-		$smarty_cache_dir 		= APP_PATH.'/cache/';					//»º´æÄ¿Â¼
-		$smarty_cache_lifetime 	= '';									//»º´æÎÄ¼þÉú´æÆÚ
-		$smarty_template_dir 	= APP_PATH.'templates/';				//Ä£°åÄ¿Â¼
-		$smarty_compile_dir 	= APP_PATH.'templates_c';				//±àÒëÄ¿Â¼
-		$smarty_delimiter 		= explode('|', '{[|]}');				//×óÓÒ·Ö½ç·û
+	/*smartyç›®å½•ä¿¡æ¯*/
+	//------------é…ç½®æœåŠ¡å™¨ä¿¡æ¯
+		$dbhost 	= "localhost";	//é…ç½®ä¸»æœº
+		$dbuser 	= "root";		//é…ç½®ç”¨æˆ·å
+		$dbpassword = "";		//é…ç½®å¯†ç 
+		$dbname 	= "lib";		//ä½¿ç”¨æ•°æ®åº“
+		$dbcoding 	= "utf8";		//è®¾ç½®å­—ç¬¦é›†
+	//------------é…ç½®smartyç›®å½•ä¿¡æ¯----------
+		$smarty_config_dir 		= SMARTY_PATH.'Config_File.class.php';	//ç›®å½•æ–‡ä»¶
+		$smarty_caching 		= false;								//æ˜¯å¦å¯ç”¨ç¼“å­˜
+		$smarty_cache_dir 		= APP_PATH.'/cache/';					//ç¼“å­˜ç›®å½•
+		$smarty_cache_lifetime 	= '';									//ç¼“å­˜æ–‡ä»¶ç”Ÿå­˜æœŸ
+		$smarty_template_dir 	= APP_PATH.'templates/';				//æ¨¡æ¿ç›®å½•
+		$smarty_compile_dir 	= APP_PATH.'templates_c';				//ç¼–è¯‘ç›®å½•
+		$smarty_delimiter 		= explode('|', '{[|]}');				//å·¦å³åˆ†ç•Œç¬¦
 ?>
