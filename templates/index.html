@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>首页::图书管理系统</title>
+	<link href="{[$css_path]}index.css" rel="stylesheet" type="text/css" />
+	<link href="{[$css_path]}common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="allpage">
+	<div id="header">
+	</div>
+
+	<div id="nav">
+		<div id="navIn">
+			<div>
+			<form action="index.php" method="get">
+				<input type="text"  name="searchContent" style="width:140px; height:25px;" />
+				<input type="submit" name="searchSubmit" style="height:25px" value="搜索" />
+			</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+		<div id="cont_location" class="left">
+	    	<div id="pageLocation" class="left">
+	    	<a href="index.php">首页</a>
+	    	</div>
+	    </div>
+	    
+	    <div id="con_n_1" class="left">
+	        	{[if $page['first_page'] == $page['current_page']]}
+	        		| 当前已是第一页
+	        	{[else]}
+	        	<a href="{[$web_root]}index.php?page={[$page['first_page'] ]}">第一页</a> | 
+	        	<a href="{[$web_root]}index.php?page={[$page['prev_page'] ]}">上一页</a> 
+	        	{[/if]}
+	        	 | 
+	        	{[foreach from=$page['mid_page'] item=mid]}
+	        	<a href="{[$web_root]}index.php?page={[$mid]}">【{[$mid]}】</a>
+	        	{[/foreach]}
+	        	 | 
+	        	{[if $page['last_page'] == $page['current_page']]}
+	        		当前已是最后一页 | 
+	        	{[else]}
+	        	<a href="{[$web_root]}index.php?page={[$page['next_page'] ]}">下一页</a> | 
+	        	<a href="{[$web_root]}index.php?page={[$page['last_page'] ]}">最后一页</a> | 
+	        	{[/if]}
+	        </div>
+	    
+	    <div id="cont_main" class="left">
+	    
+	    	<table width="860px" cellspacing="0">
+				<thead>
+					<tr>
+						<th width="5%">书名</th>
+						<th width="8%">卖家</th>
+						<th width="5%">联系手机</th>
+						<th width="10%">联系地址</th>
+						<th width="8%">价格(元)</th>
+						<th width="8%">类别</th>			
+						<th width="10%">作者</th>
+						<th width="10%">出版社</th>
+						<th width="10%">ISBN</th>
+					</tr>
+				</thead>
+				<tbody>
+					{[section name=i loop=$content]}
+				<tr>
+					<td align="center">
+						<a href="{[$web_root]}desc.php?bid={[$content[i]['info_book_id'] ]} ">
+	        				{[$content[i]['info_book_name'] ]}
+	        			</a>
+					</td>
+					<td align="center" title="{[$content[i]['info_book_owner_name'] ]}">
+						{[$content[i]['info_book_owner_name'] ]}
+					</td>
+					<td align="center" title="{[$content[i]['info_book_owner_phone'] ]}">
+						{[$content[i]['info_book_owner_phone'] ]}
+					</td>
+					<td align="center" title="{[$content[i]['info_book_owner_addr'] ]}">
+						{[$content[i]['info_book_owner_addr']|truncate:10:"...":true ]}
+					</td>
+					<td align="center" title="{[$content[i]['info_book_price'] ]}">
+						{[$content[i]['info_book_price'] ]}
+					</td>
+					<td align="center" title="{[$content[i]['book_type_name'] ]}">
+						{[$content[i]['book_type_name'] ]}
+					</td>
+					<td align="center" title="{[$content[i]['info_book_autor'] ]}">
+						{[$content[i]['info_book_autor']|truncate:15:"...":true ]}
+					</td>
+					<td align="center" title="{[$content[i]['info_book_publish'] ]}">
+						{[$content[i]['info_book_publish'] ]}
+					</td>
+					
+					<td align="center" title="{[$content[i]['info_book_ISBN'] ]}">
+						{[$content[i]['info_book_ISBN'] ]}
+					</td>
+				</tr>
+					{[/section]}
+				</tbody>
+			</table>
+	       
+	        
+	    </div>
+	</div>
+	
+	<div id="footer" class="left">
+		<div id="footer1"></div>
+		<div class="link">| <a href="index.php">关于我们</a> |<a href="{[$web_root]}admin/">管理入口</a> |</div>
+	</div>
+
+</div>
+
+</body>
+</html>

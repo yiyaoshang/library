@@ -1,0 +1,62 @@
+{[include file="$COMM_HEADER"]}
+<div id="Info">
+	<div>
+		<span>书籍类别</span>
+		<select name="category_id"  id="category_id" onchange='javascript:location.href="{[spUrl c=book_manage a=books_info]}&type_id="+this.value'>
+				<option value="0">--请选择类别--</option>
+				{[foreach from=$types item=type]}
+				<option value="{[$type.book_type_id]}" style="font-weight: bold;">{[$type.book_type_name]}</option>
+						{[foreach from=$type.ctype item=ctype name=ctype]}
+						<option value="{[$ctype.book_type_id]}">{[if
+						$smarty.foreach.ctype.last]} └─ {[else]} ├─ {[/if]}
+						{[$ctype.book_type_name]}</option>
+						{[/foreach]}
+				{[/foreach]}
+		</select>
+	</div>
+	<div class="table-list">
+		<table width="100%" cellspacing="0">
+			<thead>
+				<tr>
+					<th width="5%">书名</th>
+					<th width="8%">卖家</th>
+					<th width="5%">联系手机</th>
+					<th width="10%">联系地址</th>
+					<th width="8%">价格(元)</th>
+					<th width="8%">类别</th>			
+					<th width="10%">作者</th>
+					<th width="10%">出版社</th>
+					<th width="10%">ISBN</th>
+					<th width="5%">页数</th>
+					<th width="10%">添加时间</th>
+					<th width="5%">管理操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<form action="?m=admin&c=content&a=sort" method="post" id="sortForm">
+			{[foreach from=$books item=book]}
+				<tr>
+					<td align="center">{[$book.info_book_name]}</td>
+					<td align="center">{[$book.info_book_owner_name]}</td>
+					<td align="center">{[$book.info_book_owner_phone]}</td>
+					<td align="center">{[$book.info_book_owner_addr]}</td>
+					<td align="center">{[$book.info_book_price]}</td>
+					<td align="center">{[$book.book_type_name]}</td>
+					<td align="center">{[$book.info_book_autor]}</td>
+					<td align="center">{[$book.info_book_publish]}</td>
+					<td align="center">{[$book.info_book_ISBN]}</td>
+					<td align="center">{[$book.info_book_page]}</td>
+					<td align="center">{[$book.info_book_add_time|date_format:'%Y-%m-%d']}</td>				
+					<td align="center">
+						<a href="{[spUrl c=book_manage a=edit_book_info]}&book_id={[$book.info_book_id]}">修改</a> 
+						| <a href="javascript:confirmurl('{[spUrl c=book_manage a=del_book]}&book_id={[$book.info_book_id]}]','你真的要删除【{[$book.info_book_name]}】么＄1?7')">删除</a>
+					</td>
+				</tr>
+			{[/foreach]}
+			<tr><td colspan="12" style="text-align:center;">{[$pageHTML]}</td></tr>
+			</form>
+			</tbody>
+		</table>
+	</div>
+</div>
+{[include file="$COMM_END"]}

@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+
+	 
+#allpage{ width:1002px;
+		height:1152px;
+		margin:auto;}
+
+table{
+	margin-top:15px;
+}
+
+table thead tr th{
+	font-size: 16px;
+}
+
+table tbody *{
+	font-size:13px;
+}
+
+table tbody tr a{
+	color: rgb(104, 35, 23);
+}
+
+table tbody tr {
+	line-height:33px;
+}
+	 
+/*content*/	 
+#content{ width:1002px; height:784px;
+background-image:url(../img/kz2_2.jpg);
+	
+}
+#content #cont_location{
+		width:1002px;
+		height:57px;
+		}
+#cont_location #pageLocation{
+	 margin-left:91px;_margin-left:46px;
+	 margin-top:29px;
+	 height:18px;
+	 width:830px;
+	 overflow:hidden;
+	 text-align:left;
+	 font-size:15px;
+	 font-weight:200;
+	 }
+#content #cont_main{
+		width:860px;
+		height:705px;
+		border:1px solid #CFBAA9;
+		margin-left:70px;_margin-left:35px;
+		}
+	.cont_top{
+	margin:22px 0 0 0;
+	}
+	
+	
+		#con_n_1{
+			width:860px;
+			height:20px;
+			text-align:center;
+			font-size:14px;
+			line-height:140%;
+			font-family: "微软雅黑","黑体","宋体", Arial, "times New Roman", sans-serif;
+			font-weight:200;
+			}
+		#con_n_1 a{ text-decoration:none;
+		color:black;}

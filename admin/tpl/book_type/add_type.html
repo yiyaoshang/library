@@ -1,0 +1,63 @@
+{[include file="$COMM_HEADER"]}
+<link type="text/css" rel="stylesheet"
+	href="{[$PLUGIN_PATH]}formValidator/style/validator.css"></link>
+<script type="text/javascript"
+	src="{[$PLUGIN_PATH]}formValidator/formValidator_min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.formValidator.initConfig({
+		onError : function(msg) {
+			alert(msg);
+		}
+	});
+	
+	$("#typeName").formValidator({
+		onshow : "请输入类别名称",
+		onfocus : "请输入类别名称",
+	}).InputValidator({
+		min : 1,
+		onerror : "你输入的类别名称不能为空"
+	});
+});
+</script>
+<div id="Info">
+<div class="table-list">
+<form id="addTypeForm" action="{[spUrl c=book_type a=type_add]}"
+	method="post">
+<table width="100%" cellspacing="0">
+	<thead>
+		<tr>
+			<th colspan="5">类别信息填写</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td align="center" width="20%">所属父类别</td>
+			<td align="left"><select name="parenttype" id="parenttype"
+				class="inputText">
+				<option value="0" style="font-weight: bold;">作为一级父类别</option>
+				{[foreach from=$types item=type]}
+				<option value="{[$type.book_type_id]}" style="font-weight: bold;">{[$type.book_type_name]}</option>
+				{[/foreach]}
+			</select></td>
+		</tr>
+		<tr>
+			<td align="center">类别名称：</td>
+			<td align="left"><input name="typeName" id="typeName"
+				class="inputText" type="text" value='' /> <span id="typeNameTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td colspan="5" align="center"><input type='button'
+				class='admin_btn' value='提交'
+				onclick="javascript:if(jQuery.formValidator.PageIsValid('1')){document.getElementById('addTypeForm').submit();}" />
+			</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</div>
+</div>
+<!--list table end-->
+</td>
+{[include file="$COMM_END"]}

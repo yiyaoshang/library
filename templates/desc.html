@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>详情::图书管理系统</title>
+<link href="{[$css_path]}desc.css" rel="stylesheet" type="text/css" />
+<link href="{[$css_path]}common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="allpage">
+	<div id="header">
+	</div>
+	
+	<div id="nav">
+		<div id="navIn">
+			<div>
+				<form action="index.php" method="get">
+					<input type="text"  name="searchContent" style="width:140px; height:25px;" />
+					<input type="submit" name="searchSubmit" style="height:25px" value="搜索" />
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+		<div id="cont_location" class="left">
+	    	<div id="pageLocation" class="left">
+	    		<a href="index.php">首页</a>->{[$content['info_book_name']]}
+	    	</div>
+	    	
+	    	<div id="cont_main" class="left">
+	    		<div class="cont_top left con_news">
+	    		<p>书名：{[$content['info_book_name']]}</p>
+	    		<p>卖家：{[$content['info_book_owner_name']]}</p>
+	    		<p>联系电话：{[$content['info_book_owner_phone']]}</p>
+	    		<p>联系地址：{[$content['info_book_owner_addr']]}</p>
+	    		<p>价格：{[$content['info_book_price']]}</p>
+	    		<p>类别：{[$content['book_type_name']]}</p>
+	    		<p>作者：{[$content['info_book_autor']]}</p>
+	    		<p>ISBN：{[$content['info_book_ISBN']]}</p>
+	    		<p>页数：{[$content['info_book_page']]}</p>
+	    		<p>出版社：{[$content['info_book_publish']]}</p>
+	    		<p>
+	    			详细描述：
+	    			{[if $content['info_book_detail'] ]}
+	    				{[$content['info_book_detail'] ]}
+	    			{[else]}
+	    				没有提供详细描述
+	    			{[/if]}
+	    		</p>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	
+	<div id="footer" class="left">
+		<div id="footer1"></div>
+		<div class="link">| <a href="index.php">关于我们</a> |<a href="{[$web_root]}admin/">管理入口</a> |</div>
+	</div>
+
+
+
+</div>
+<script type="text/javascript" src="../js/kangzhan2.js"></script>
+</body>
+</html>

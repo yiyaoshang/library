@@ -1,0 +1,18 @@
+{[include file="$COMM_HEADER"]}
+	<div id="systemInfo" class="box" style="width:95%; margin-top:10px;">
+	<h6>书籍查找</h6>
+	<div class="boxContent">
+	<form action="{[spUrl c=book_manage a=search_book]}" method="post">
+	<p><input type="text" name="condition">
+	查找方式：
+	<select name="search_type">
+		<option value="1">按书名</option>
+		<option value="2">按作者</option>
+		<option value="3">按ISBN</option>
+	</select>
+	<input type='submit' class='admin_btn' value="查找">
+	</p>
+	</form>
+	</div>
+	</div>
+{[include file="$COMM_END"]}

@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+#allpage{ width:1002px;
+		height:1152px;
+		margin:auto;}	 
+
+#cont_main p {
+	font-size: 16px;
+	line-height:40px;
+	margin-left:10px;
+}
+/*content*/	 
+#content{ width:1002px; height:784px;
+background-image:url(../img/kz2_2.jpg);
+	
+}
+#content #cont_location{
+		width:1002px;
+		height:57px;
+		}
+#cont_location #pageLocation{
+	 margin-left:91px;_margin-left:46px;
+	 margin-top:29px;
+	 height:18px;
+	 width:830px;
+	 overflow:hidden;
+	 text-align:left;
+	 font-size:15px;
+	 font-weight:200;
+	 }
+#content #cont_main{
+		width:860px;
+		height:715px;
+		border:1px solid #CFBAA9;
+		margin-left:70px;_margin-left:35px;
+		}
+#content #cont_main #con_main_title{
+	width:350px;
+	height:20px;
+	text-align:center;
+	font-weight:bolder;
+	font-family: "微软雅黑","黑体","宋体", Arial, "times New Roman", sans-serif;
+	font-size:20px;
+	margin:34px 0 0 240px;_margin:34px 0 0 120px;
+	overflow:hidden;
+	line-height:100%;_line-height:110%;
+	
+	}
+#content #cont_main #con_main_con{
+	margin:16px 0 0 80px;_margin:16px 0 0 40px;
+	width:698px;
+	height:505px;
+	text-align:left;
+	line-height:150%;
+	font-weight:200;
+	
+	}
+#content #cont_main #con_main_con .con_main_con1{
+	font-weight:bold;
+	margin:24px 0 24px;
+	font-family: "微软雅黑","黑体","宋体", Arial, "times New Roman", sans-serif;
+	font-size:14px;
+	width:698px;
+	}
+#con_n_1{
+			width:860px;
+			height:20px;
+			text-align:center;
+			font-size:14px;
+			line-height:140%;
+			font-family: "微软雅黑","黑体","宋体", Arial, "times New Roman", sans-serif;
+			font-weight:200;
+			margin-top:70px;
+			}
+		#con_n_1 a{ text-decoration:none;
+		color:black;}

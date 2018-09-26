@@ -1,0 +1,43 @@
+{[include file="$COMM_HEADER"]}
+<div id="Info">
+	<div class="table-list">
+		<table width="100%" cellspacing="0" id="tree">
+			<thead>
+				<tr>
+					<th width="10%">id</th>
+					<th width="40%">书籍类别名</th>
+					<th width="40%">书籍父类别名</th>
+					<th width="10%">管理操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<form action="?m=admin&c=type&a=sort" method="post" id="sortForm">
+			{[foreach from=$types item=typeItem]}
+				<tr id="type_{[$typeItem.book_type_id]}">
+					<td align="center">{[$typeItem.book_type_id]}</td>
+					<td align="center">{[$typeItem.book_type_name]}</td>
+					<td></td>
+					<td align="center">
+						<a href="{[spUrl c=book_type a=edit_type]}&type_id={[$typeItem.book_type_id]}">修改</a> 
+						| <a href="javascript:confirmurl('{[spUrl c=book_type a=del_type]}&type_id={[$typeItem.book_type_id]}','你真的要删除【{[$typeItem.book_type_name]}】类别么')">删除</a>
+					</td>
+				</tr>
+				{[foreach from=$typeItem.ctype item=ctypeItem]}
+				<tr id="type_{[$ctypeItem.type_id]}" class="child-of-type_{[$typeItem.type_id]}">
+					<td align="center">{[$ctypeItem.book_type_id]}</td>
+					<td align="center">{[$ctypeItem.book_type_name]}</td>
+					<td align="center">{[$typeItem.book_type_name]}</td>
+					<td align="center">
+						<a href="{[spUrl c=book_type a=edit_type]}&type_id={[$ctypeItem.book_type_id]}">修改</a> 
+						| <a href="javascript:confirmurl('{[spUrl c=book_type a=del_type]}&type_id={[$ctypeItem.book_type_id]}','你真的要删除【{[$ctypeItem.book_type_name]}】类别么')">删除</a>
+					</td>
+				</tr>
+				{[/foreach]}
+			{[/foreach]}
+			<tr><td colspan=6" style="text-align:center;">{[$pageHTML]}</td></tr>
+			</form>
+			</tbody>
+		</table>
+	</div>
+</div>
+{[include file="$COMM_END"]}

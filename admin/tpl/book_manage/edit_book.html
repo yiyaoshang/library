@@ -1,0 +1,205 @@
+{[include file="$COMM_HEADER"]}
+<link type="text/css" rel="stylesheet"
+	href="{[$PLUGIN_PATH]}formValidator/style/validator.css"></link>
+<script type="text/javascript"
+	src="{[$PLUGIN_PATH]}formValidator/formValidator_min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.formValidator.initConfig({
+		onError : function(msg) {
+			alert(msg);
+		}
+	});
+	
+	$("#bookName").formValidator({
+		onshow : "请输入书籍名称",
+		onfocus : "请输入书籍名称",
+	}).InputValidator({
+		min : 1,
+		onerror : "书籍名称不能为空"
+	});
+	
+	$("#ownerName").formValidator({
+		onshow : "请输入卖家名称",
+		onfocus : "请输入卖家名称",
+	}).InputValidator({
+		min : 1,
+		onerror : "卖家名称不能为空"
+	});
+	
+	$("#ownerPhone").formValidator({
+		onshow : "请输入卖家联系手机",
+		onfocus : "请输入卖家联系手机",
+	}).InputValidator({
+		min : 1,
+		onerror : "卖家联系手机不能为空"
+	});
+	
+	$("#ownerAddr").formValidator({
+		onshow : "请输入卖家联系地址",
+		onfocus : "请输入卖家联系地址",
+	}).InputValidator({
+		min : 1,
+		onerror : "卖家联系地址不能为空"
+	});
+	
+	$("#autor").formValidator({
+		onshow : "请输入作者名",
+		onfocus : "请输入作者名",
+	}).InputValidator({
+		min : 1,
+		onerror : "作者名不能为空"
+	});
+	
+	$("#price").formValidator({
+		onshow : "请输入价格",
+		onfocus : "请输入价格",
+	}).InputValidator({
+		min : 1,
+		onerror : "价格不能为空"
+	});
+	$("#ISBN").formValidator({
+		onshow : "请输入ISBN",
+		onfocus : "请输入ISBN",
+	}).InputValidator({
+		min : 1,
+		onerror : "ISBN不能为空"
+	});
+	$("#page").formValidator({
+		onshow : "请输入页数",
+		onfocus : "请输入页数",
+	}).InputValidator({
+		min : 1,
+		onerror : "页数不能为空"
+	});
+	$("#publish").formValidator({
+		onshow : "请输入出版社",
+		onfocus : "请输入出版社",
+	}).InputValidator({
+		min : 1,
+		onerror : "出版社不能为空"
+	});
+	$("#price").formValidator({
+		onshow : "请输入价格",
+		onfocus : "请输入价格",
+	}).InputValidator({
+		min : 1,
+		onerror : "价格不能为空"
+	});
+	$("#detail").formValidator({
+		onshow : "请输入详细描述",
+		onfocus : "请输入详细描述",
+	}).InputValidator({
+		min : 1,
+		onerror : "详细描述不能为空"
+	});
+});
+</script>
+<div id="Info">
+<div class="table-list">
+<form id="addTypeForm" action="{[spUrl c=book_manage a=book_edit]}&book_id={[$book.info_book_id]}"
+	method="post">
+<table width="100%" cellspacing="0">
+	<thead>
+		<tr>
+			<th colspan="5">书籍信息填写</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td align="center" width="20%">书籍所属类别</td>
+			<td align="left"><select name="parenttype" id="parenttype"
+				class="inputText">
+				{[foreach from=$types item=type]}
+				<option value="{[$type.book_type_id]}" style="font-weight: bold;">{[$type.book_type_name]}</option>
+						{[foreach from=$type.ctype item=ctype name=ctype]}
+						<option value="{[$ctype.book_type_id]}" {[if $ctype.book_type_id == $book.info_book_type]}selected="selected"{[/if]}>
+						{[if $smarty.foreach.ctype.last]} └─ {[else]} ├─ {[/if]}
+						{[$ctype.book_type_name]}</option>
+						{[/foreach]}
+				{[/foreach]}
+			</select></td>
+		</tr>
+		<tr>
+			<td align="center">书名：</td>
+			<td align="left"><input name="bookName" id="bookName"
+				class="inputText" type="text" value='{[$book.info_book_name]}' /> <span id="bookNameTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">卖家：</td>
+			<td align="left"><input name="ownerName" id="ownerName"
+				class="inputText" type="text" value='{[$book.info_book_owner_name]}' /> <span id="ownerNameTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">联系手机：</td>
+			<td align="left"><input name="ownerPhone" id="ownerPhone"
+				class="inputText" type="text" value='{[$book.info_book_owner_phone]}' /> <span id="ownerPhoneTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">联系地址：</td>
+			<td align="left"><input name="ownerAddr" id="ownerAddr"
+				class="inputText" type="text" value='{[$book.info_book_owner_addr]}' /> <span id="ownerAddrTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">作者：</td>
+			<td align="left"><input name="autor" id="autor"
+				class="inputText" type="text" value='{[$book.info_book_autor]}' /> <span id="autorTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">价格：</td>
+			<td align="left"><input name="price" id="price"
+				class="inputText" type="text" value='{[$book.info_book_price]}' /> <span id="priceTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">ISBN：</td>
+			<td align="left"><input name="ISBN" id="ISBN"
+				class="inputText" type="text" value='{[$book.info_book_ISBN]}' /> <span id="ISBNTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">页数：</td>
+			<td align="left"><input name="page" id="page" class="inputText"
+				type="text" value='{[$book.info_book_page]}' /> <span id="pageTip" class="inputTip"
+				style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">出版社：</td>
+			<td align="left"><input name="publish" id="publish" class="inputText"
+				type="text" value='{[$book.info_book_publish]}' /> <span id="publishTip" class="inputTip"
+				style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">库存量：</td>
+			<td align="left"><input name="storage" id="storage" class="inputText"
+				type="text" value='{[$book.info_book_storage]}' /> <span id="storageTip" class="inputTip"
+				style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td align="center">详细描述：</td>
+			<td align="left">
+			<textarea name="detail" id="detail" class="textareaText"
+				width="304px" height="150px">
+					{[$book.info_book_detail]}
+				</textarea> <span id="detailTip" class="inputTip"
+				style="width: 250px"></span></td>
+		</tr>
+		<tr>
+			<td colspan="5" align="center"><input type='button'
+				class='admin_btn' value='确认修改'
+				onclick="javascript:if(jQuery.formValidator.PageIsValid('1')){document.getElementById('addTypeForm').submit();}" />
+			</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</div>
+</div>
+<!--list table end-->
+</td>
+{[include file="$COMM_END"]}

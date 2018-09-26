@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*common*/
+*{
+	padding:0px;
+	margin:0px;
+	
+	}
+body,p{ font-family: "宋体","微软雅黑", Arial, "times New Roman", sans-serif;font-size:12px;
+margin:auto;font-size: 12px;}
+a{ text-decoration:none; color:#8D826E;} 
+.div{ display:block;}
+.left{ float:left;}
+.right{ float:right;}
+.clear{ clear:both;}
+
+/*page*/
+
+#header{
+	 width:1002px;height:182px;
+	 background-image:url(../img/kz2_1.jpg);}
+/*navigation*/
+#nav{ border:1px solid #CDB39A;
+	width:1000px;height:42px;
+	background-image:url(../img/nav/navR.jpg);
+	 }
+	 #navIn{
+		 margin:8px 52px 10px 52px;_margin:8px 26px 5px 52px;
+		 width:896px;height:24px; border:0px; 
+	 }
+	 .navBlock{ width:94px; height:24px;}
+	 #navIn .navMargin{ margin-left:6px;_margin-left:3px; float:left;}
+			.secNav{
+			display:block;
+			height:100px;
+			width:76px;
+			list-style:150%;
+			font-size:15px;
+			font-weight:bolder;
+			font-family:"华文行楷","宋体","微软雅黑", Arial, "times New Roman", sans-serif;
+			color:#C6B49E;
+			text-align:center;
+			}
+		.secNav a:hover{ color:#AE9A81;}
+
+/*footer*/
+#footer{ background-image:url(../img/kz2_3.jpg);
+	width:1002px;;height:142px;
+	}
+	#footer1{ width:1002px;height:30px;}
+	#footer .link {
+		width: 1002px;
+		text-align: center;
+		line-height: 26px;
+		 color:#8D826E;
+		}
+	#footer .copyright {
+		margin: 0 auto;
+		width: 1002px;
+		text-align: center;
+		line-height: 26px;
+		 color:#8D826E;
+		}

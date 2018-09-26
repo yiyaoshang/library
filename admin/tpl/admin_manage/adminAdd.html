@@ -1,0 +1,79 @@
+{[include file="$COMM_HEADER"]}
+<link type="text/css" rel="stylesheet"
+	href="{[$PLUGIN_PATH]}formValidator/style/validator.css"></link>
+<script type="text/javascript"
+	src="{[$PLUGIN_PATH]}formValidator/formValidator_min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.formValidator.initConfig({
+		onError : function(msg) {
+			alert(msg);
+		}
+	});
+	
+	$("#adminName").formValidator({
+		onshow : "请输入管理员名称",
+		onfocus : "请输入管理员名称",
+	}).InputValidator({
+		min : 1,
+		onerror : "管理员名称不能为空"
+	});
+	$("#realName").formValidator({
+		onshow : "请输入管理员真实姓名",
+		onfocus : "请输入管理员真实姓名",
+	})
+	$("#password").formValidator({
+		onshow : "请输入密码",
+		onfocus : "请输入密码",
+	}).InputValidator({
+		min : 1,
+		onerror : "密码不能为空"
+	});
+});
+</script>
+<div id="Info">
+<div class="table-list">
+<form id="addTypeForm" action="{[spUrl c=admin_manage a=doAdminAdd]}"
+	method="post" name="adminAdd">
+<table width="100%" cellspacing="0">
+	<thead>
+		<tr>
+			<th colspan="5">添加管理员</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td align="center">管理员用户名：</td>
+			<td align="left">
+				<input name="adminAdd[adminName]" id="adminName" class="inputText" type="text" value='' />
+				<span id="adminNameTip" class="inputTip" style="width: 250px"></span>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">真实姓名：</td>
+			<td align="left">
+				<input name="adminAdd[realName]" id="realName" class="inputText" type="text" value='' />
+				<span id="realNameTip" class="inputTip" style="width: 250px"></span>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">密码：</td>
+			<td align="left"><input name="adminAdd[password]" id="password"
+				class="inputText" type="password" value='' /> <span id="passwordTip"
+				class="inputTip" style="width: 250px"></span></td>
+		</tr>
+		
+		<tr>
+			<td colspan="5" align="center"><input type='button'
+				class='admin_btn' value='添加'
+				onclick="javascript:if(jQuery.formValidator.PageIsValid('1')){document.getElementById('addTypeForm').submit();}" />
+			</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</div>
+</div>
+<!--list table end-->
+</td>
+{[include file="$COMM_END"]}
