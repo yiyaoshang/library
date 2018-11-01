@@ -16,7 +16,7 @@
 	//------------配置服务器信息
 		$dbhost 	= "localhost";	//配置主机
 		$dbuser 	= "library";		//配置用户名
-		$dbpassword     = "library";		//配置密码
+		$dbpassword     = "lib@123";		//配置密码
 		$dbname 	= "lib";		//使用数据库
 		$dbcoding 	= "utf8";		//设置字符集
 	//------------配置smarty目录信息----------
